@@ -2,17 +2,17 @@ import argparse
 
 import tweepy
 
-auth = tweepy.OAuthHandler(consumer_key='Ip7MXjdkqh8kxzMAhjc4sJMvH',
-  consumer_secret='sNZmiwh7RORAaWMyAIIEmc3GH3ELV2Jt3FL9T0JoQry22TLdwa')
-auth.set_access_token('2588044008-zqSBbDhlbyfqt7xYN8cJERuvvDfRIn3ppuEEAuZ',
-	'TrszDLxkH2Weo7mUKKQT1orjvw84BEtbuB4bcXjtEf86a')
+auth = tweepy.OAuthHandler(consumer_key='yE7vJQaPOx4NzYdDGdGj2z0Mu',
+  consumer_secret='O6ziWt24NtwoowEuIE0ikJTuTuwDwkhlHPngz6AI1cutfCG4ZV')
+auth.set_access_token('2916610206-J6yEm9PlkymrpztHx1URt9hJ5K4djgYw3UTns9r',
+	'O7keZ627dBQv1Cpbxh0BHGjBCS7VgKghwWkJG3iYsU4l0')
 api = tweepy.API(auth)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-u', '--user', dest='user_name',
-	help='The user_name of any authenticated tweeter user', required=True)
+	help='The user_name of any authenticated tweeter user')
 parser.add_argument('-c', '--count', dest='count', type=int,
-	help='The no of last tweets on the user account', default=5, required=True)
+	help='The no of last tweets on the user account', default=5)
 
 namespace=parser.parse_args()
 
