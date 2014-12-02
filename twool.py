@@ -1,11 +1,14 @@
 import argparse
 
+import yaml
+
 import tweepy
 
-auth = tweepy.OAuthHandler(consumer_key='yE7vJQaPOx4NzYdDGdGj2z0Mu',
-  consumer_secret='O6ziWt24NtwoowEuIE0ikJTuTuwDwkhlHPngz6AI1cutfCG4ZV')
-auth.set_access_token('2916610206-J6yEm9PlkymrpztHx1URt9hJ5K4djgYw3UTns9r',
-	'O7keZ627dBQv1Cpbxh0BHGjBCS7VgKghwWkJG3iYsU4l0')
+with open("config/user_data.yml", 'r') as ymlfile:
+  cfg = yaml.load(ymlfile)
+
+auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
+auth.set_access_token(cfg['access_token'], cfg['access_token_secret'])
 api = tweepy.API(auth)
 
 parser = argparse.ArgumentParser()
